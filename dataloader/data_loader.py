@@ -86,20 +86,20 @@ def get_transform(opt):
     transform_list = []
     osize = [opt.loadSize[0], opt.loadSize[1]]
     fsize = [opt.fineSize[0], opt.fineSize[1]]
-    if opt.isTrain:
-        if opt.resize_or_crop == 'resize_and_crop':
-            transform_list.append(transforms.Resize(osize))
-            transform_list.append(transforms.RandomCrop(fsize))
-        elif opt.resize_or_crop == 'crop':
-            transform_list.append(transforms.RandomCrop(fsize))
-        if not opt.no_augment:
-            transform_list.append(transforms.ColorJitter(0.0, 0.0, 0.0, 0.0))
-        if not opt.no_flip:
-            transform_list.append(transforms.RandomHorizontalFlip())
-        if not opt.no_rotation:
-            transform_list.append(transforms.RandomRotation(3))
-    else:
-        transform_list.append(transforms.Resize(fsize))
+    # if opt.isTrain:
+    #     if opt.resize_or_crop == 'resize_and_crop':
+    #         transform_list.append(transforms.Resize(osize))
+    #         transform_list.append(transforms.RandomCrop(fsize))
+    #     elif opt.resize_or_crop == 'crop':
+    #         transform_list.append(transforms.RandomCrop(fsize))
+    #     if not opt.no_augment:
+    #         transform_list.append(transforms.ColorJitter(0.0, 0.0, 0.0, 0.0))
+    #     if not opt.no_flip:
+    #         transform_list.append(transforms.RandomHorizontalFlip())
+    #     if not opt.no_rotation:
+    #         transform_list.append(transforms.RandomRotation(3))
+    # else:
+    transform_list.append(transforms.Resize(fsize))
 
     transform_list += [transforms.ToTensor()]
 
