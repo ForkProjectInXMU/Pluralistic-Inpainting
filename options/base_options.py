@@ -22,8 +22,8 @@ class BaseOptions():
         parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0, 1, 2 use -1 for CPU')
 
         # data pattern define
-        parser.add_argument('--img_file', type=str, default='D:/Data/FaceScape_dist_list/final/test/images', help='training and testing dataset')
-        parser.add_argument('--mask_file', type=str, default='D:/Data/FaceScape_dist_list/final/test/masks', help='load test mask')
+        parser.add_argument('--img_file', type=str, default='D:/Data/FaceScape_dist_list/final/train/images', help='training and testing dataset')
+        parser.add_argument('--mask_file', type=str, default='D:/Data/FaceScape_dist_list/final/train/masks', help='load test mask')
         parser.add_argument('--loadSize', type=int, default=[256, 256], help='scale images to this size')
         parser.add_argument('--fineSize', type=int, default=[256, 256], help='then crop to this size')
         parser.add_argument('--resize_or_crop', type=str, default='resize_and_crop', help='scaling and cropping of images at load time [resize_and_crop|crop|]')
